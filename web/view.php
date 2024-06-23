@@ -1,10 +1,12 @@
+<HTML>
+<BODY>
 <?php
 
 // Foreach directory in the files directory, inside that directory, get the image with the biggest name.
 // Then display the image.
 
 
-$dirs = scandir('../files');
+$dirs = scandir('files');
 foreach ($dirs as $dir) {
     if ($dir === '.' || $dir === '..') {
         continue;
@@ -26,3 +28,7 @@ foreach ($dirs as $dir) {
         echo '<img src="files/' . $dir . '/' . $maxFile . '">';
     }
 }
+
+?>
+</BODY>
+</HTML>
