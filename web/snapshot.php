@@ -5,8 +5,12 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Read the "Fingerprint" header.
     $fingerprint = $_SERVER['Fingerprint'];
+    $dir = '../files/' . $fingerprint;
+    if (!file_exists($dir)) {
+        mkdir($dir);
+    }
     $input = file_get_contents('php://input');
-    $filename = '../files/' . $fingerporint . '/' . time() . '.jpg';
+    $filename = $dir . '/' . time() . '.jpg';
     file_put_contents($filename, $input);
     echo 'Saved snapshot to ' . $filename;
 } else {
