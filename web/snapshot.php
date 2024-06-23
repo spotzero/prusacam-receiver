@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
         sort($files);
         array_unshift($files); // Remove '.'.
         array_unshift($files); // Remove '..'.
-        $to_delete = array_splice($files, 0, $max_images_per_camera);
+        $to_delete = array_splice($files, 0, $max_images_per_camera - 2);
         foreach ($to_delete as $file) {
             unlink($dir . '/' . $file);
         }
