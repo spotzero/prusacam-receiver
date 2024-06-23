@@ -13,8 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     $fingerprint = $_SERVER['HTTP_FINGERPRINT'];
     $token = $_SERVER['HTTP_TOKEN'];
     if (!in_array($token, $tokens)) {
-        // Return a 403 Forbidden status code.
-        http_response_code(403);
+        // Return a 401 Unauthorized response.
+        http_response_code(401);
         echo 'Invalid token';
         exit;
     }
