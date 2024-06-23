@@ -5,7 +5,7 @@
 if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     // Read the "Fingerprint" header.
     $fingerprint = $_SERVER['HTTP_FINGERPRINT'];
-    $dir = '../files/' . $fingerprint;
+    $dir = 'files/' . $fingerprint;
     if (!file_exists($dir)) {
         mkdir($dir);
     }

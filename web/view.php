@@ -9,7 +9,7 @@ foreach ($dirs as $dir) {
     if ($dir === '.' || $dir === '..') {
         continue;
     }
-    $files = scandir('../files/' . $dir);
+    $files = scandir('files/' . $dir);
     $max = 0;
     $maxFile = '';
     foreach ($files as $file) {
@@ -23,6 +23,6 @@ foreach ($dirs as $dir) {
         }
     }
     if ($maxFile !== '') {
-        echo '<img src="../files/' . $dir . '/' . $maxFile . '">';
+        echo '<img src="files/' . $dir . '/' . $maxFile . '">';
     }
 }
